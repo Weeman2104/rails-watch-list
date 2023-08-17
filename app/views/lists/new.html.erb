@@ -1,0 +1,10 @@
+<h1>Lists</h1>
+<p>Make a new list here.</p>
+<% if @list.errors.any? %>
+<%= @list.errors.inspect %>
+<% end %>
+
+<%= simple_form_for @list do |form| %>
+<%= form.text_field :name %>
+<%= form.submit "Create", disable_with: 'Creating...', class:"btn btn-success" %>
+<% end %>

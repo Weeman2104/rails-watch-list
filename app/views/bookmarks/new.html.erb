@@ -1,0 +1,10 @@
+<h1>Bookmarks#new</h1>
+<p>Find me in app/views/bookmarks/new.html.erb</p>
+<% if @bookmark.errors.any? %>
+<%= @bookmark.errors.inspect %>
+<% end %>
+<%= simple_form_for [@list, @bookmark] do |f| %>
+<%= f.association :movie %>
+<%= f.text_field :comment %>
+<%= f.submit class:"btn btn-success" %>
+<% end %>
